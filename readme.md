@@ -1,6 +1,20 @@
-pgPhone扩展
-手机短信验证码，语音验证码，话费充值，流量充值
-安装
+
+### 开发 pgPhone扩展
+
+### 用法
+
+```
 composer require chenze/pangu-phone
-在app.php添加
+```
+
+或者在你的 `composer.json` 的 require 部分中添加:
+```json
+ "chenze/pangu-phone": "~v1.0"
+```
+
+下载完毕之后,直接配置 `app/config.php` 的 `providers`:
+
+```php
 \Aze\panguPhone\PanguPhoneServiceProvider::class,
+
+```
