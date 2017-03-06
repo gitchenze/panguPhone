@@ -1,0 +1,18 @@
+{
+    "name": "chenze/pangu-phone",
+    "description": "pg phone code voice code recharge",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chenze",
+            "email": "156775640@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Aze\\panguPhone\\":"src/"
+        }
+    }
+}
