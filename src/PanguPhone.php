@@ -7,17 +7,17 @@ class PanguPhone {
 
     protected $Sid = '';
 
-    protected $open_id = 'JHee8010f283288e0cb270094e8bc2f42c';
+    protected $open_id = 'JHee8010f283288e0cb270094e8bc2f***';
 
-    protected $flow_key = '51066947eee4877564546c1eb64ba34b';
+    protected $flow_key = '51066947eee4877564546c1eb64ba***';
 
-    protected $farce_key = '59b86e0795c24815e0d87f77ae2e476b';
+    protected $farce_key = '59b86e0795c24815e0d87f77ae2e4***';
     //---------------end据和数据平台的---------------------------------
 
     //-----------------秒嘀平台的-------------------------------
-    protected $mobile_sid = 'de5c5a7d7f1544aaaefdde433e2df0a3';
+    protected $mobile_sid = 'de5c5a7d7f1544aaaefdde433e2df***';
 
-    protected $mobile_token = '5e7367d51cf5431aaaf9c965d59b4642';
+    protected $mobile_token = '5e7367d51cf5431aaaf9c965d59b4***';
 
     //-----------------end秒嘀平台的-------------------------------
 
@@ -30,13 +30,13 @@ class PanguPhone {
     }
 
 //语音验证码
-    public function mobile_voice_code($called = '13796192381', $verifyCode = '123456') {
+    public function mobile_voice_code($called = '1379619238*', $verifyCode = '123456') {
 //        $url = 'https://api.miaodiyun.com/call/voiceCode';
         $url = 'https://api.miaodiyun.com/20150822/call/voiceCode';
 
         $Sid = $this->mobile_sid;
         $token = $this->mobile_token;
-//        $called = '13796192381';
+//        $called = '1379619238*';
 //        $verifyCode = '123456';
         $timestamp = date("YmdHis");
         // 签名
@@ -81,13 +81,13 @@ class PanguPhone {
     }
 
 //短信验证码
-    public function mobile_number_code($called = '13796192381', $verifyCode = '123456') {
+    public function mobile_number_code($called = '1379619238*', $verifyCode = '123456') {
 
         $url = 'https://api.miaodiyun.com/20150822/industrySMS/sendSMS';
         $Sid = $this->mobile_sid;
         $token = $this->mobile_token;
         //与秒嘀平台的短信模版对应 内容去前面需要完全匹配
-        $smsContent = '【陈泽科技】欢迎使用chenze.site网站您的验证码:' . $verifyCode;
+        $smsContent = '【帅泽科技】欢迎使用chenze.site网站您的验证码:' . $verifyCode;
         $timestamp = date("YmdHis");
         // 签名
         $sign = md5($Sid . $token . $timestamp);
@@ -130,7 +130,7 @@ class PanguPhone {
     }
 
     //充话费
-    public function recharge_telephone_farce($phone = '13796192381', $money = '30', $order = 'rtf12345678') {
+    public function recharge_telephone_farce($phone = '1379619238*', $money = '30', $order = 'rtf12345678') {
         $url = 'http://op.juhe.cn/ofpay/mobile/onlineorder';
         //充值金额,目前可选：10、20、30、50、100、md5(OpenID+key+phoneno+cardnum+orderid)
         $sign = md5($this->open_id . $this->farce_key . $phone . $money . $order);
@@ -152,7 +152,7 @@ class PanguPhone {
     }
 
 //    冲流量
-    public function recharge_telephone_flow($phone = '13796192381', $ll = '500', $order = 'ref12345678') {
+    public function recharge_telephone_flow($phone = '1379619238*', $ll = '500', $order = 'ref12345678') {
         $url = 'http://v.juhe.cn/flow/recharge';
 //        获取充值套餐的pid
         $check_url = 'http://v.juhe.cn/flow/telcheck';
